@@ -1,7 +1,20 @@
 # library_top
 Library | JavaScript | Full Stack JavaScript (Getting Hired, NodeJS and MongoDB, React, HTML and CSS Advanced, JavaScript, HTML and CSS Intermediate) | 01/12 (03/29) | The Odin Project | 2024
 
-1. If you haven’t already, set up your project with skeleton HTML/CSS and JS files.
+0. If you haven’t already, set up your project with skeleton HTML/CSS and JS files.
+
+1. Write a constructor for making “Book” objects. Your book objects should have the book’s `title`, `author`, the number of `pages`, and whether or not you have `read` the book.
+	- Put a function into the constructor that can report the book info like so:
+
+	```
+	theHobbit.info(); // "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
+	```
+
+	- Note: It is almost always best to `return` things rather than putting `console.log()` directly into the function. In this case, return the `info` string and log it after the function has been called:
+
+	```
+	console.log(theHobbit.info());
+	```
 
 2. All of your book objects are going to be stored in an array, so add a function to the script (not the constructor) that can take user’s input and store the new book objects into an array. Your code should look something like this:
 
