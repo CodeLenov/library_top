@@ -1,3 +1,7 @@
+// Array for stored books
+const myLibrary = []
+
+// The Constructor
 function Book(title. author, pages, read) {
 
 	this.title = title;
