@@ -16,3 +16,7 @@ function Book(title. author, pages, read) {
 }
 
 console.log(this.info());
+
+function addBooksToLibrary() {
+	
+}

@@ -1,0 +1,7 @@
+* {
+	font-family: 'Lucida Console', 'Courier New', monospace;
+}
+
+label, input, button {
+	text-align: center;
+}
