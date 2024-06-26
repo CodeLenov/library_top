@@ -1,8 +1,11 @@
-const button = document.querySelector('button');
+const buttonAddBook = document.querySelector('#buttonAddBook');
+const modalAddBook = document.querySelector('#modalAddBook');
+const buttonCloseModal = document.querySelector('#buttonCloseModal');
+const buttonSubmit = document.querySelector('#buttonSubmit');
 // Array for stored books
 const myLibrary = []
 
-// The Constructor
+/*// The Constructor
 function Book(title, author, pages, read) {
 
 	this.title = title;
@@ -27,6 +30,16 @@ function addBookToLibrary() {
 		document.querySelector('#read').checked,
 	);
 
-}
+}*/
 
-button.addEventListener('click', addBookToLibrary);
+buttonAddBook.addEventListener('click', () => {
+	modalAddBook.style.display = 'block';
+});
+
+buttonCloseModal.addEventListener('click', () => {
+	modalAddBook.style.display = 'none';
+});
+
+buttonSubmit.addEventListener('click', () => {
+	modalAddBook.style.display = 'none';
+});

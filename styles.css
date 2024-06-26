@@ -5,3 +5,24 @@
 h1 {
 	text-align: center;
 }
+
+#modalAddBook {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	top: 20%;
+	width: 60%;
+	overflow: auto;
+	border: 1px solid black;
+	background-color: rgb(204, 204, 204);
+}
+
+#buttonCloseModal {
+	float: right;
+	font-weight: bold;
+}
+
+#buttonCloseModal:hover, #buttonCloseModal:focus {
+	text-decoration: none;
+	cursor: pointer;
+}
