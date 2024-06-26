@@ -1,8 +1,9 @@
+const button = document.querySelector('button');
 // Array for stored books
 const myLibrary = []
 
 // The Constructor
-function Book(title. author, pages, read) {
+function Book(title, author, pages, read) {
 
 	this.title = title;
 	this.author = author;
@@ -17,6 +18,15 @@ function Book(title. author, pages, read) {
 
 console.log(this.info());
 
-function addBooksToLibrary() {
-	
+function addBookToLibrary() {
+
+	newBook = new Book(
+		document.querySelector('#title').value,
+		document.querySelector('#author').value,
+		document.querySelector('#pages').value,
+		document.querySelector('#read').checked,
+	);
+
 }
+
+button.addEventListener('click', addBookToLibrary);
