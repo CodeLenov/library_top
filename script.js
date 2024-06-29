@@ -17,20 +17,18 @@ function Book(title, author, pages, read) {
 		return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
 	}
 
+	console.log(this.info());
+
 }
 
-console.log(this.info());
-
-// Prototype
+// Creating new instances (objects) using the Constructor
 function addBookToLibrary() {
-
-	newBook = new Book(
+	const newBook = new Book(
 		document.querySelector('#title').value,
 		document.querySelector('#author').value,
 		document.querySelector('#pages').value,
 		document.querySelector('#read').checked,
 	);
-
 }*/
 
 // Create Objects inherit from 'myLibrary'
