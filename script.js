@@ -14,13 +14,14 @@ function Book(title, author, pages, read) {
 	this.read = read;
 
 	this.info = function() {
-		return info = (`${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`);
+		return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
 	}
 
 }
 
 console.log(this.info());
 
+// Prototype
 function addBookToLibrary() {
 
 	newBook = new Book(
@@ -31,6 +32,8 @@ function addBookToLibrary() {
 	);
 
 }*/
+
+// Create Objects inherit from 'myLibrary'
 
 buttonAddBook.addEventListener('click', () => {
 	modalAddBook.style.display = 'block';
