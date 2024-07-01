@@ -17,7 +17,7 @@ const book3 = new Book('Human Action. A Treatise on Economics', 'Ludwig von Mise
 
 myLibrary.push(book1, book2, book3);
 
-// The Constructor
+// the constructor
 function Book(title, author, pages, read) {
 
 	this.title = title;
@@ -34,17 +34,17 @@ function Book(title, author, pages, read) {
 
 }
 
-// Creating the new instances (objects) using the Constructor
+// store the new book objects into the array 'myLibrary' using the constructor
 function addBookToLibrary() {
 
-	const bookNew = new Book(
+	const newBookObject = new Book(
 		title.value,
 		author.value,
 		pages.value,
 		read.checked,
 	);
 
-	myLibrary.push(bookNew);
+	myLibrary.push(newBookObject);
 
 	// outputLibrary.innerHTML += bookNew.info();
 
