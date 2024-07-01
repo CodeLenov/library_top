@@ -13,7 +13,7 @@ const myLibrary = []
 
 const book1 = new Book('1984', 'George Orwell', '328', 'true',);
 const book2 = new Book('The Ethics of Liberty', 'Murray Rothbard', '308', 'true',);
-const book3 = new Book('Human Action. A Treatise on Economics', '1037', 'false',);
+const book3 = new Book('Human Action. A Treatise on Economics', 'Ludwig von Mises', '1037', 'false',);
 
 myLibrary.push(book1, book2, book3);
 
@@ -26,25 +26,27 @@ function Book(title, author, pages, read) {
 	this.read = read;
 
 	this.info = function() {
-		return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
+		return `${this.title}, by ${this.author}, ${this.pages} pages, ${this.read}<br />`;
 	}
 
 	console.log(this.info());
-	
+	outputLibrary.innerHTML += this.info();
 
 }
 
 // Creating the new instances (objects) using the Constructor
 function addBookToLibrary() {
 
-	const addBook = new Book(
+	const bookNew = new Book(
 		title.value,
 		author.value,
 		pages.value,
 		read.checked,
 	);
 
-	myLibrary.push(addBook);
+	myLibrary.push(bookNew);
+
+	// outputLibrary.innerHTML += bookNew.info();
 
 }
 
@@ -65,7 +67,4 @@ buttonCloseModal.addEventListener('click', () => {
 buttonSubmit.addEventListener('click', () => {
 	addBookToLibrary();
 	modalAddBook.style.display = 'none';
-	outputLibrary.innerHTML = Book.info;
 });
-
-
