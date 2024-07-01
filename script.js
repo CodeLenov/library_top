@@ -21,7 +21,7 @@ function Book(title, author, pages, read) {
 
 }
 
-// Creating new instances (objects) using the Constructor
+// Creating the new instances (objects) using the Constructor
 function addBookToLibrary() {
 	const newBook = new Book(
 		document.querySelector('#title').value,
@@ -43,4 +43,5 @@ buttonCloseModal.addEventListener('click', () => {
 
 buttonSubmit.addEventListener('click', () => {
 	modalAddBook.style.display = 'none';
+	addBookToLibrary();
 });
