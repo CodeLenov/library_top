@@ -7,9 +7,9 @@ const buttonAddBook = document.querySelector('#buttonAddBook');
 const modalAddBook = document.querySelector('#modalAddBook');
 const buttonCloseModal = document.querySelector('#buttonCloseModal');
 const buttonSubmit = document.querySelector('#buttonSubmit');
-const outputLibrary = document.querySelector('#outputLibrary');
+const outputMyLibrary = document.querySelector('#outputMyLibrary');
 // Array for stored books
-const myLibrary = []
+const myLibrary = [];
 
 const book1 = new Book('1984', 'George Orwell', '328', 'true',);
 const book2 = new Book('The Ethics of Liberty', 'Murray Rothbard', '308', 'true',);
@@ -18,6 +18,7 @@ const book3 = new Book('Human Action. A Treatise on Economics', 'Ludwig von Mise
 myLibrary.push(book1, book2, book3);
 
 // the constructor
+
 function Book(title, author, pages, read) {
 
 	this.title = title;
@@ -29,28 +30,26 @@ function Book(title, author, pages, read) {
 		return `${this.title}, by ${this.author}, ${this.pages} pages, ${this.read}<br />`;
 	}
 
-	console.log(this.info());
-	outputLibrary.innerHTML += this.info();
+	// outputLibrary.innerHTML += this.info();
 
 }
 
 // store the new book objects into the array 'myLibrary' using the constructor
+
 function addBookToLibrary() {
 
-	const newBookObject = new Book(
+	const book = new Book(
 		title.value,
 		author.value,
 		pages.value,
 		read.checked,
 	);
 
-	myLibrary.push(newBookObject);
+	myLibrary.push(book);
 
-	// outputLibrary.innerHTML += bookNew.info();
+	// outputMyLibrary.innerHTML += bookNew.info();
 
 }
-
-// Create Objects inherit from 'myLibrary'
 
 buttonAddBook.addEventListener('click', () => {
 	title.value = '';
@@ -68,3 +67,7 @@ buttonSubmit.addEventListener('click', () => {
 	addBookToLibrary();
 	modalAddBook.style.display = 'none';
 });
+
+for (everyBook of myLibrary) {
+	outputMyLibrary.innerHTML += Book.info;
+}
