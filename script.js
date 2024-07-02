@@ -11,6 +11,8 @@ const outputMyLibrary = document.querySelector('#outputMyLibrary');
 // Array for stored books
 const myLibrary = [];
 
+// manually add a few books (book objects) for start library
+
 const book1 = new Book('1984', 'George Orwell', '328', 'true',);
 const book2 = new Book('The Ethics of Liberty', 'Murray Rothbard', '308', 'true',);
 const book3 = new Book('Human Action. A Treatise on Economics', 'Ludwig von Mises', '1037', 'false',);
@@ -34,7 +36,7 @@ function Book(title, author, pages, read) {
 
 }
 
-// store the new book objects into the array 'myLibrary' using the constructor
+// store the new book objects (from user's input) into the array 'myLibrary' using the constructor
 
 function addBookToLibrary() {
 
@@ -50,6 +52,8 @@ function addBookToLibrary() {
 	// outputMyLibrary.innerHTML += bookNew.info();
 
 }
+
+// take user's input
 
 buttonAddBook.addEventListener('click', () => {
 	title.value = '';
@@ -69,5 +73,6 @@ buttonSubmit.addEventListener('click', () => {
 });
 
 for (everyBook of myLibrary) {
-	outputMyLibrary.innerHTML += Book.info;
+	outputMyLibrary.innerHTML = myLibrary[everyBook];
 }
+outputMyLibrary.innerHTML = myLibrary[1];
