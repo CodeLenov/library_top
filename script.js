@@ -42,9 +42,7 @@ myLibrary.prototype.info = function() {
 
 // store the new book objects (from user's input) into the array 'myLibrary' using the constructor
 
-function addBookToLibrary(e) {
-
-	e.preventDefault();
+function addBookToLibrary() {
 
 	const book = new Book(
 		title.value,
@@ -73,7 +71,8 @@ buttonCloseModal.addEventListener('click', () => {
 	modalAddBook.style.display = 'none';
 });
 
-buttonSubmit.addEventListener('click', () => {
+buttonSubmit.addEventListener('click', (e) => {
+	e.preventDefault();
 	addBookToLibrary();
 	modalAddBook.style.display = 'none';
 });
