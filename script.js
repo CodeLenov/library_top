@@ -19,44 +19,6 @@ const book3 = new Book('Human Action. A Treatise on Economics', 'Ludwig von Mise
 
 myLibrary.push(book1, book2, book3);
 
-// the constructor
-
-function Book(title, author, pages, read) {
-
-	this.title = title;
-	this.author = author;
-	this.pages = pages;
-	this.read = read;
-
-	this.info = function() {
-		return `${this.title}, by ${this.author}, ${this.pages} pages, ${this.read}<br />`;
-	}
-
-	// outputLibrary.innerHTML += this.info();
-
-}
-
-myLibrary.prototype.info = function() {
-	outputMyLibrary.innerHTML += this.info();
-}
-
-// store the new book objects (from user's input) into the array 'myLibrary' using the constructor
-
-function addBookToLibrary() {
-
-	const book = new Book(
-		title.value,
-		author.value,
-		pages.value,
-		read.checked,
-	);
-
-	myLibrary.push(book);
-
-	// outputMyLibrary.innerHTML += bookNew.info();
-
-}
-
 // take user's input
 
 buttonAddBook.addEventListener('click', () => {
@@ -77,6 +39,34 @@ buttonSubmit.addEventListener('click', (e) => {
 	modalAddBook.style.display = 'none';
 });
 
-for (let i = 0; i < myLibrary.length; i++) {
-	outputMyLibrary.innerHTML += myLibrary.info;
+// store the new book objects (from user's input) into the array 'myLibrary' using the constructor
+
+function addBookToLibrary() {
+
+	const book = new Book(
+		title.value,
+		author.value,
+		pages.value,
+		read.checked,
+	);
+
+	myLibrary.push(book);
+
+}
+
+// the constructor
+
+function Book(title, author, pages, read) {
+
+	this.title = title;
+	this.author = author;
+	this.pages = pages;
+	this.read = read;
+
+	this.info = function() {
+		return `${this.title}, by ${this.author}, ${this.pages} pages, ${this.read}<br />`;
+	}
+
+	outputMyLibrary.innerHTML += this.info();
+
 }
