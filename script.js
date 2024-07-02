@@ -36,9 +36,15 @@ function Book(title, author, pages, read) {
 
 }
 
+myLibrary.prototype.info = function() {
+	outputMyLibrary.innerHTML += this.info();
+}
+
 // store the new book objects (from user's input) into the array 'myLibrary' using the constructor
 
-function addBookToLibrary() {
+function addBookToLibrary(e) {
+
+	e.preventDefault();
 
 	const book = new Book(
 		title.value,
@@ -72,7 +78,6 @@ buttonSubmit.addEventListener('click', () => {
 	modalAddBook.style.display = 'none';
 });
 
-for (everyBook of myLibrary) {
-	outputMyLibrary.innerHTML = myLibrary[everyBook];
+for (let i = 0; i < myLibrary.length; i++) {
+	outputMyLibrary.innerHTML += myLibrary.info;
 }
-outputMyLibrary.innerHTML = myLibrary[1];
