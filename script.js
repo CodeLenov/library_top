@@ -4,8 +4,8 @@ const pages = document.querySelector('#pages');
 const read = document.querySelector('#read');
 
 const buttonAddBook = document.querySelector('#buttonAddBook');
-const modalAddBook = document.querySelector('#modalAddBook');
-const buttonCloseModal = document.querySelector('#buttonCloseModal');
+const formAddBook = document.querySelector('#formAddBook');
+const buttonCloseForm = document.querySelector('#buttonCloseForm');
 const buttonSubmit = document.querySelector('#buttonSubmit');
 const outputMyLibrary = document.querySelector('#outputMyLibrary');
 // Array for stored books
@@ -26,17 +26,17 @@ buttonAddBook.addEventListener('click', () => {
 	author.value = '';
 	pages.value = '';
 	read.checked = '';
-	modalAddBook.style.display = 'block';
+	formAddBook.style.display = 'block';
 });
 
-buttonCloseModal.addEventListener('click', () => {
-	modalAddBook.style.display = 'none';
+buttonCloseForm.addEventListener('click', () => {
+	formAddBook.style.display = 'none';
 });
 
 buttonSubmit.addEventListener('click', (e) => {
 	e.preventDefault();
 	addBookToLibrary();
-	modalAddBook.style.display = 'none';
+	formAddBook.style.display = 'none';
 });
 
 // store the new book objects (from user's input) into the array 'myLibrary' using the constructor

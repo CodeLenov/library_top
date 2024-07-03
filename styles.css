@@ -6,7 +6,7 @@ h1 {
 	text-align: center;
 }
 
-#modalAddBook {
+#formAddBook {
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -17,12 +17,12 @@ h1 {
 	background-color: rgb(204, 204, 204);
 }
 
-#buttonCloseModal {
+#buttonCloseForm {
 	float: right;
 	font-weight: bold;
 }
 
-#buttonCloseModal:hover, #buttonCloseModal:focus {
+#buttonCloseForm:hover, #buttonCloseForm:focus {
 	text-decoration: none;
 	cursor: pointer;
 }
