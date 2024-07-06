@@ -103,3 +103,9 @@ function displayMyLibrary() {
 
 }
 
+// remove a book
+
+function removeBook(index) {
+	myLibrary.splice(index, 1);
+	displayMyLibrary();
+}
