@@ -1,15 +1,10 @@
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
-const pages = document.querySelector('#pages');
-const read = document.querySelector('#read');
-
 const buttonAddBook = document.querySelector('#buttonAddBook');
 const formAddBook = document.querySelector('#formAddBook');
 const buttonCloseForm = document.querySelector('#buttonCloseForm');
 const buttonSubmit = document.querySelector('#buttonSubmit');
 const outputMyLibrary = document.querySelector('#outputMyLibrary');
-// Array for stored books
-const myLibrary = [];
+
+const myLibrary = []; // array for stored books
 
 // manually add a few books (book objects) for start library
 
@@ -43,14 +38,16 @@ buttonSubmit.addEventListener('click', (e) => {
 
 function addBookToLibrary() {
 
-	const book = new Book(
-		title.value,
-		author.value,
-		pages.value,
-		read.checked,
-	);
+	const title = document.querySelector('#title');
+	const author = document.querySelector('#author');
+	const pages = document.querySelector('#pages');
+	const read = document.querySelector('#read');
 
-	myLibrary.push(book);
+	const newBook = new Book(title.value, author.value, pages.value, read.checked);
+
+	myLibrary.push(newBook);
+
+	displayMyLibrary();
 
 }
 
@@ -63,10 +60,45 @@ function Book(title, author, pages, read) {
 	this.pages = pages;
 	this.read = read;
 
-	this.info = function() {
+	// output myLibrary
+
+	/*this.info = function() {
 		return `${this.title}, by ${this.author}, ${this.pages} pages, ${this.read}<br />`;
 	}
 
-	outputMyLibrary.innerHTML += this.info();
+	outputMyLibrary.innerHTML += this.info();*/
 
 }
+
+/*Book.prototype.info = function() {
+	return `${this.title}, by ${this.author}, ${this.pages} pages, ${this.read}<br />`;
+}
+
+outputMyLibrary.innerHTML += book3.info();*/
+
+// output myLibrary
+
+function displayMyLibrary() {
+
+	outputMyLibrary.innerHTML = '';
+
+	for (let i = 0; i < myLibrary.length; i++) {	
+		let book = myLibrary[i];
+		let divBook = document.createElement('div');
+		divBook.innerHTML = `
+			<div class="divBookHeader">
+				<h3 class="title">${book.title}<h3>
+				<h5 class="author">by ${book.author}</h5>
+			</div>
+			<div class="divBookMain">
+				<p class="pages">${book.pages} pages</p>
+				<p class="read">${book.read ? "Read" : "Not Read Yet"}</p>
+				<button class="toggleRead" onclick="toggleRead(${i})" type="button">Toggle Read Status</button>
+				<button class="remove" onclick="removeBook(${i})" type="button">Remove Book</button>
+			</div>
+		`;
+		outputMyLibrary.appendChild(divBook);
+	}
+
+}
+
