@@ -1,3 +1,13 @@
+// 1. Declarate variables
+	// 1.1. Manually add a few books (book objects) for start library
+// 2. Take user's input
+// 3. Store the new book (objects from user's input) into the array 'myLibrary' using the constructor
+// 4. Toggle read status
+// 5. Remove a book
+// 6. Output myLibrary
+
+// ----------------------------------------------------------------------
+// !!! 1. Declarate variables
 const buttonAddBook = document.querySelector('#buttonAddBook');
 const formAddBook = document.querySelector('#formAddBook');
 const buttonCloseForm = document.querySelector('#buttonCloseForm');
@@ -6,7 +16,8 @@ const outputMyLibrary = document.querySelector('#outputMyLibrary');
 
 const myLibrary = []; // array for stored books
 
-// manually add a few books (book objects) for start library
+// ----------------------------------------------------------------------
+// 1.1. Manually add a few books (book objects) for start library
 
 const book1 = new Book('1984', 'George Orwell', '328', 'true',);
 const book2 = new Book('The Ethics of Liberty', 'Murray Rothbard', '308', 'true',);
@@ -14,7 +25,10 @@ const book3 = new Book('Human Action. A Treatise on Economics', 'Ludwig von Mise
 
 myLibrary.push(book1, book2, book3);
 
-// take user's input
+displayMyLibrary();
+
+// ----------------------------------------------------------------------
+// 2. Take user's input
 
 buttonAddBook.addEventListener('click', () => {
 	title.value = '';
@@ -34,7 +48,15 @@ buttonSubmit.addEventListener('click', (e) => {
 	formAddBook.style.display = 'none';
 });
 
-// store the new book (objects from user's input) into the array 'myLibrary' using the constructor
+// ----------------------------------------------------------------------
+// 3. Store the new book (objects from user's input) into the array 'myLibrary' using the constructor
+
+function Book(title, author, pages, read) {
+	this.title = title;
+	this.author = author;
+	this.pages = pages;
+	this.read = read;
+}
 
 function addBookToLibrary() {
 
@@ -51,16 +73,8 @@ function addBookToLibrary() {
 
 }
 
-// the constructor for new book (objects from user's input)
-
-function Book(title, author, pages, read) {
-	this.title = title;
-	this.author = author;
-	this.pages = pages;
-	this.read = read;
-}
-
-// toggle read status
+// ----------------------------------------------------------------------
+// 4. Toggle read status
 
 Book.prototype.toggleRead = function() {
 	this.read = !this.read;
@@ -71,14 +85,16 @@ function toggleRead(index) {
 	displayMyLibrary();
 }
 
-// remove a book
+// ----------------------------------------------------------------------
+// 5. Remove a book
 
 function removeBook(index) {
 	myLibrary.splice(index, 1);
 	displayMyLibrary();
 }
 
-// output myLibrary
+// ----------------------------------------------------------------------
+// 6. Output myLibrary
 
 function displayMyLibrary() {
 
@@ -104,4 +120,3 @@ function displayMyLibrary() {
 	}
 
 }
-displayMyLibrary();
