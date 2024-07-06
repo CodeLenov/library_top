@@ -85,6 +85,8 @@ function displayMyLibrary() {
 	for (let i = 0; i < myLibrary.length; i++) {	
 		let book = myLibrary[i];
 		let divBook = document.createElement('div');
+		divBook.setAttribute("class", "divBook");
+		outputMyLibrary.appendChild(divBook);
 		divBook.innerHTML = `
 			<div class="divBookHeader">
 				<h3 class="title">${book.title}<h3>
@@ -97,7 +99,6 @@ function displayMyLibrary() {
 				<button class="remove" onclick="removeBook(${i})" type="button">Remove Book</button>
 			</div>
 		`;
-		outputMyLibrary.appendChild(divBook);
 	}
 
 }
