@@ -76,6 +76,24 @@ function Book(title, author, pages, read) {
 
 outputMyLibrary.innerHTML += book3.info();*/
 
+// toggle read status
+
+Book.prototype.toggleRead = function() {
+	this.read = !this.read;
+}
+
+function toggleRead(index) {
+	myLibrary[index].toggleRead();
+	displayMyLibrary();
+}
+
+// remove a book
+
+function removeBook(index) {
+	myLibrary.splice(index, 1);
+	displayMyLibrary();
+}
+
 // output myLibrary
 
 function displayMyLibrary() {
@@ -94,18 +112,11 @@ function displayMyLibrary() {
 			</div>
 			<div class="divBookMain">
 				<p class="pages">${book.pages} pages</p>
-				<p class="read">${book.read ? "Read" : "Not Read Yet"}</p>
+				<p class="read">${book.read ? "Read" : "Not Read"}</p>
 				<button class="toggleRead" onclick="toggleRead(${i})" type="button">Toggle Read Status</button>
 				<button class="remove" onclick="removeBook(${i})" type="button">Remove Book</button>
 			</div>
 		`;
 	}
 
-}
-
-// remove a book
-
-function removeBook(index) {
-	myLibrary.splice(index, 1);
-	displayMyLibrary();
 }
