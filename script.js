@@ -34,7 +34,7 @@ buttonSubmit.addEventListener('click', (e) => {
 	formAddBook.style.display = 'none';
 });
 
-// store the new book objects (from user's input) into the array 'myLibrary' using the constructor
+// store the new book (objects from user's input) into the array 'myLibrary' using the constructor
 
 function addBookToLibrary() {
 
@@ -51,30 +51,14 @@ function addBookToLibrary() {
 
 }
 
-// the constructor
+// the constructor for new book (objects from user's input)
 
 function Book(title, author, pages, read) {
-
 	this.title = title;
 	this.author = author;
 	this.pages = pages;
 	this.read = read;
-
-	// output myLibrary
-
-	/*this.info = function() {
-		return `${this.title}, by ${this.author}, ${this.pages} pages, ${this.read}<br />`;
-	}
-
-	outputMyLibrary.innerHTML += this.info();*/
-
 }
-
-/*Book.prototype.info = function() {
-	return `${this.title}, by ${this.author}, ${this.pages} pages, ${this.read}<br />`;
-}
-
-outputMyLibrary.innerHTML += book3.info();*/
 
 // toggle read status
 
@@ -120,3 +104,4 @@ function displayMyLibrary() {
 	}
 
 }
+displayMyLibrary();
