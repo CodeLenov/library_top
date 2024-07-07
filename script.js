@@ -17,7 +17,7 @@ const outputMyLibrary = document.querySelector('#outputMyLibrary');
 const myLibrary = []; // array for stored books
 
 // ----------------------------------------------------------------------
-// 1.1. Manually add a few books (book objects) for start library
+// 1.1. Manually add a few books (book objects) for start library (using the constructor)
 
 const book1 = new Book('1984', 'George Orwell', '328', 'true',);
 const book2 = new Book('The Ethics of Liberty', 'Murray Rothbard', '308', 'true',);
@@ -108,13 +108,15 @@ function displayMyLibrary() {
 		divBook.innerHTML = `
 			<div class="divBookHeader">
 				<h3 class="title">${book.title}<h3>
-				<h5 class="author">by ${book.author}</h5>
+				<h4 class="author">by ${book.author}</h4>
 			</div>
 			<div class="divBookMain">
 				<p class="pages">${book.pages} pages</p>
-				<p class="read">${book.read ? "Read" : "Not Read"}</p>
-				<button class="toggleRead" onclick="toggleRead(${i})" type="button">Toggle Read Status</button>
-				<button class="remove" onclick="removeBook(${i})" type="button">Remove Book</button>
+				<p class="read"><em>${book.read ? "Read" : "Not Read"}</em></p>
+			</div>
+			<div class="divButtons">
+				<button class="buttonToggleRead" onclick="toggleRead(${i})" type="button">Read / Not Read</button>
+				<button class="buttonRemoveBook" onclick="removeBook(${i})" type="button">Remove Book</button>
 			</div>
 		`;
 	}

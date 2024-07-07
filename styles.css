@@ -1,21 +1,39 @@
 * {
+	box-sizing: border-box;
 	font-family: 'Lucida Console', 'Courier New', monospace;
+}
+
+body {
+	background-color: #cd853f;
 }
 
 h1 {
 	text-align: center;
 }
 
+#buttonAddBook {
+	display: block;
+	margin: auto;
+	padding: 0.5em;
+	border: none;
+	border-radius: 0.3em;
+	font-size: 1.2em;
+	background-color: #0080ff;
+	color: white;
+}
+
 #formAddBook {
-	display: none;
-	position: fixed;
+	display: block;
+	position: relative;
 	z-index: 1;
-	top: 20%;
+	margin: auto;
 	width: 60%;
 	overflow: auto;
 	border: 1px solid black;
 	background-color: rgb(204, 204, 204);
+	text-align: center;
 }
+
 
 #buttonCloseForm {
 	float: right;
@@ -25,4 +43,59 @@ h1 {
 #buttonCloseForm:hover, #buttonCloseForm:focus {
 	text-decoration: none;
 	cursor: pointer;
+}
+
+#outputMyLibrary {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 2em;
+	justify-content: space-evenly;
+	margin-top: 2em;
+	text-align: center;
+}
+
+.divBook {
+	flex: 1 1 auto;
+	border: 0.1em solid black;
+	padding: 1em;
+	background-color: #ffdab9;
+}
+
+.divButtons {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 1em;
+	justify-content: space-evenly;
+	text-align: center;
+}
+
+.buttonToggleRead {
+	border: none;
+	border-radius: 0.5em;
+	display: block;
+	margin: auto 0.5em;
+	padding: 0.5em;
+	background-color: #9acd32;
+}
+
+#buttonAddBook:hover, .buttonToggleRead:hover, .buttonRemoveBook:hover {
+	cursor: pointer;
+}
+
+#buttonAddBook:focus, .buttonToggleRead:focus, .buttonRemoveBook:focus {
+	border: 1px solid black;
+}
+
+#buttonAddBook:active, .buttonToggleRead:active, .buttonRemoveBook:active {
+	border: 1px solid black;
+	color: white;
+}
+
+.buttonRemoveBook {
+	border: none;
+	border-radius: 0.5em;
+	display: block;
+	margin: auto 0.5em;
+	padding: 0.5em;
+	background-color: #ff69b4;
 }

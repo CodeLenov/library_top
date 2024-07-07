@@ -11,36 +11,40 @@
 
 <body>
 
-<h1>Library</h1>
+<hgroup>
+	<h1>Library</h1>
+	<button id="buttonAddBook" type="button">Add New Book</button>
+</hgroup>
 
-<form id="formAddBook" method="post" action="">
+<main>
 
-	<button id="buttonCloseForm" type="button">&times;</button>
+	<form id="formAddBook" method="post" action="">
 
-	<p>
-		<label for="title">Title</label><br />
-		<input id="title" type="text" size="30" name="title" required />
-	</p>
-	<p>
-		<label for="author">Author</label><br />
-		<input id="author" type="text" size="30" name="author" required />
-	</p>
-	<p>
-		<label for="pages">Pages</label><br />
-		<input id="pages" type="number" maxlength="30" min="1" max="10000" name="pages" required />
-	</p>
-	<p>
-		<label for="read">Read</label><br />
-		<input id="read" type="checkbox" name="read" required />
-	</p>
+		<button id="buttonCloseForm" type="button">&times;</button>
 
-	<button id="buttonSubmit" type="submit">Submit</button>
+		<p>
+			<label for="title">Title</label><br />
+			<input id="title" type="text" size="30" name="title" required />
+		</p>
+		<p>
+			<label for="author">Author</label><br />
+			<input id="author" type="text" size="30" name="author" required />
+		</p>
+		<p>
+			<label for="pages">Pages</label><br />
+			<input id="pages" type="number" maxlength="30" min="1" max="10000" name="pages" required />
+		</p>
+		<p>
+			<label for="read">Read</label><br />
+			<input id="read" type="checkbox" name="read" required />
+		</p>
 
-</form>
+		<button id="buttonSubmit" type="submit">Submit</button>
 
-<button id="buttonAddBook" type="button">Add Book</button>
+	</form>
 
-<div id="outputMyLibrary"></div>
+	<div id="outputMyLibrary"></div>
+</main>
 
 </body>
 </html>
