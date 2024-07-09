@@ -1,3 +1,14 @@
+/*
+1. <body>
+2. <header>
+3. <main>
+4. #formAddBook
+5. #outputMyLibrary
+6. :hover, :focus, :active
+
+/* ---------------------------------------------------------------------- */
+/* !!! 1. <body> !!! */
+
 * {
 	box-sizing: border-box;
 	font-family: 'Lucida Console', 'Courier New', monospace;
@@ -6,6 +17,9 @@
 body {
 	background-color: #cd853f;
 }
+
+/* ---------------------------------------------------------------------- */
+/* !!! 2. <header> !!! */
 
 header {
 	position: fixed;
@@ -31,9 +45,59 @@ h1 {
 	color: white;
 }
 
+/* ---------------------------------------------------------------------- */
+/* !!! 3. <main> !!! */
+
 main {
 	padding-top: 8em;
 }
+
+/* ---------------------------------------------------------------------- */
+/* !!! 4. #formAddBook !!! */
+
+#formAddBook {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	overflow: auto;
+	max-width: 60%;
+	text-align: center;
+	margin: auto;
+	padding: 1em;
+	border: 0.1em solid black;
+	background-color: rgb(204, 204, 204);
+}
+
+#buttonCloseForm {
+	float: right;
+	font-weight: bold;
+}
+
+#title, #author, #pages {
+	width: 80%;
+	height: 2em;
+	margin: auto;
+}
+
+#read {
+	height: 1.5em; width: 1.5em; vertical-align: bottom;
+}
+
+#buttonSubmit {
+	height: 2em;
+	padding: 0 2em;
+	border: 0.1em solid gray;
+	border-radius: 0.5em;
+	background-color: #b0e0e6;
+}
+
+/* ---------------------------------------------------------------------- */
+/* !!! 5. #outputMyLibrary !!! */
+
+/* classes from javascript */
 
 #outputMyLibrary {
 	display: flex;
@@ -77,36 +141,26 @@ main {
 	background-color: #ff69b4;
 }
 
-#formAddBook {
-	display: none;
-	position: fixed;
-	z-index: 1;
-	margin: auto;
-	width: 60%;
-	overflow: auto;
-	border: 1px solid black;
-	background-color: rgb(204, 204, 204);
-	text-align: center;
-}
-
-#buttonCloseForm {
-	float: right;
-	font-weight: bold;
-}
+/* ---------------------------------------------------------------------- */
+/* !!! 6. :hover, :focus, :active !!! */
 
 #buttonCloseForm:hover, #buttonCloseForm:focus {
-	text-decoration: none;
+	border: 0.1em solid black;
 	cursor: pointer;
 }
 
-#buttonAddBook:hover, .buttonToggleRead:hover, .buttonRemoveBook:hover, #buttonAddBook:focus, .buttonToggleRead:focus, .buttonRemoveBook:focus {
-	border: 1px solid black;
+#buttonCloseForm:active {
+	border: 0.2em solid black;
 	cursor: pointer;
 }
 
-#buttonAddBook:active, .buttonToggleRead:active, .buttonRemoveBook:active {
-	border: 1px solid black;
+#buttonAddBook:hover, .buttonToggleRead:hover, .buttonRemoveBook:hover, #buttonSubmit:hover, #buttonAddBook:focus, .buttonToggleRead:focus, .buttonRemoveBook:focus, #buttonSubmit:focus {
+	border: 0.1em solid black;
+	cursor: pointer;
+}
+
+#buttonAddBook:active, .buttonToggleRead:active, .buttonRemoveBook:active, #buttonSubmit:active {
+	border: 0.1em solid black;
 	color: white;
 	cursor: pointer;
 }
-

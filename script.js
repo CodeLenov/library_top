@@ -31,11 +31,18 @@ displayMyLibrary();
 // 2. Take user's input
 
 buttonAddBook.addEventListener('click', () => {
+
 	title.value = '';
 	author.value = '';
 	pages.value = '';
 	read.checked = '';
-	formAddBook.style.display = 'block';
+
+	if (formAddBook.style.display === 'block') {
+		formAddBook.style.display = 'none';
+	} else {
+		formAddBook.style.display = 'block';
+	}
+	
 });
 
 buttonCloseForm.addEventListener('click', () => {
