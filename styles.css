@@ -7,6 +7,15 @@ body {
 	background-color: #cd853f;
 }
 
+header {
+	position: fixed;
+	top: 0;	
+	width: 100%;
+	height: 8em;
+	margin: auto;
+	background-color: #cd853f;
+}
+
 h1 {
 	text-align: center;
 }
@@ -22,27 +31,8 @@ h1 {
 	color: white;
 }
 
-#formAddBook {
-	display: block;
-	position: relative;
-	z-index: 1;
-	margin: auto;
-	width: 60%;
-	overflow: auto;
-	border: 1px solid black;
-	background-color: rgb(204, 204, 204);
-	text-align: center;
-}
-
-
-#buttonCloseForm {
-	float: right;
-	font-weight: bold;
-}
-
-#buttonCloseForm:hover, #buttonCloseForm:focus {
-	text-decoration: none;
-	cursor: pointer;
+main {
+	padding-top: 8em;
 }
 
 #outputMyLibrary {
@@ -78,19 +68,6 @@ h1 {
 	background-color: #9acd32;
 }
 
-#buttonAddBook:hover, .buttonToggleRead:hover, .buttonRemoveBook:hover {
-	cursor: pointer;
-}
-
-#buttonAddBook:focus, .buttonToggleRead:focus, .buttonRemoveBook:focus {
-	border: 1px solid black;
-}
-
-#buttonAddBook:active, .buttonToggleRead:active, .buttonRemoveBook:active {
-	border: 1px solid black;
-	color: white;
-}
-
 .buttonRemoveBook {
 	border: none;
 	border-radius: 0.5em;
@@ -99,3 +76,37 @@ h1 {
 	padding: 0.5em;
 	background-color: #ff69b4;
 }
+
+#formAddBook {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	margin: auto;
+	width: 60%;
+	overflow: auto;
+	border: 1px solid black;
+	background-color: rgb(204, 204, 204);
+	text-align: center;
+}
+
+#buttonCloseForm {
+	float: right;
+	font-weight: bold;
+}
+
+#buttonCloseForm:hover, #buttonCloseForm:focus {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#buttonAddBook:hover, .buttonToggleRead:hover, .buttonRemoveBook:hover, #buttonAddBook:focus, .buttonToggleRead:focus, .buttonRemoveBook:focus {
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+#buttonAddBook:active, .buttonToggleRead:active, .buttonRemoveBook:active {
+	border: 1px solid black;
+	color: white;
+	cursor: pointer;
+}
+
