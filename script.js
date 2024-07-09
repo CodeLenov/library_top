@@ -1,6 +1,6 @@
 // 1. Declarate variables
 	// 1.1. Manually add a few books (book objects) for start library
-// 2. Take user's input
+// 2. Take user's input and switch on/off <formAddBook>
 // 3. Store the new book (objects from user's input) into the array 'myLibrary' using the constructor
 // 4. Toggle read status
 // 5. Remove a book
@@ -28,7 +28,7 @@ myLibrary.push(book1, book2, book3);
 displayMyLibrary();
 
 // ----------------------------------------------------------------------
-// 2. Take user's input
+// 2. Take user's input and switch on/off <formAddBook>
 
 buttonAddBook.addEventListener('click', () => {
 
