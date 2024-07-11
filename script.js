@@ -113,7 +113,7 @@ function displayMyLibrary() {
 		let divBook = document.createElement('div');
 
 		divBook.setAttribute("class", "divBook");
-		outputMyLibrary.appendChild(divBook);
+		outputMyLibrary.prepend(divBook);
 
 		divBook.innerHTML = `
 			<div class="divBookHeader">
